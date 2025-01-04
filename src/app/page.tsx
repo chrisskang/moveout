@@ -1,101 +1,195 @@
-import Image from "next/image";
+'use client'
+
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { Mail, DollarSign, ChevronLeft, ChevronRight, MessageSquareText } from 'lucide-react'
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { useState } from 'react'
+
+
+interface SaleItem {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  paypalLink: string;
+  images: string[];
+}
+
+const saleItems: SaleItem[] = [
+  {
+    id: 1,
+    title: "Bean Bag",
+    description: "Comfortable bean bag in good condition, perfect for your living room. Original price €50.",
+    price: 15,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/IMG_7951.jpg","/IMG_7955.jpg"]
+  },
+  {
+    id: 2,
+    title: "Dining Table",
+    description: "Wooden dining table with 4 chairs, ideal for small apartments.",
+    price: 30,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/placeholder.svg",]
+  },
+  {
+    id: 3,
+    title: "Yoga Matt",
+    description: "Orange yoga mat, 94cm x 200cm, barely used. Original price 40€.",
+    price: 10,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/IMG_7957.jpg",]
+  },
+
+  {
+    id: 4,
+    title: "Wardrobe",
+    description: "Sturdy bookshelf with 5 shelves, great for organizing your books and decor.",
+    price: 80,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/IMG_7961.jpg","/IMG_7963.jpg"]
+  },
+
+  {
+    id: 5,
+    title: "Chair",
+    description: "Charming yellow chair, gently used, adds a vibrant touch to any room! Price for two",
+    price: 10,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/IMG_7960.jpg",]
+  },
+
+  {
+    id: 6,
+    title: "Hanger",
+    description: "Charming yellow chair, gently used, adds a vibrant touch to any room! Price for two",
+    price: 0,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/IMG_7960.jpg",]
+  },
+]
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [selectedItem, setSelectedItem] = useState<SaleItem | null>(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+  const handleContact = (item: SaleItem) => {
+    window.location.href = `mailto:your@email.com?subject=Interested in ${item.title}&body=Hi, I'm interested in the ${item.title} from your moveout sale.`
+  }
+
+  const handlePayment = (item: SaleItem) => {
+    window.open(item.paypalLink, '_blank')
+  }
+
+  const handlePrevImage = () => {
+    if (selectedItem) {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === 0 ? selectedItem.images.length - 1 : prevIndex - 1
+      )
+    }
+  }
+
+  const handleNextImage = () => {
+    if (selectedItem) {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === selectedItem.images.length - 1 ? 0 : prevIndex + 1
+      )
+    }
+  }
+
+  return (
+    <>
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {saleItems.map((item) => (
+          <Card key={item.id} className="overflow-hidden">
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="relative h-48 cursor-pointer">
+                  <Image
+                    src={item.images[0]}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    onClick={() => {
+                      setSelectedItem(item)
+                      setCurrentImageIndex(0)
+                    }}
+                  />
+                  {item.images.length > 1 && (
+                    <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded">
+                      +{item.images.length - 1}
+                    </div>
+                  )}
+                </div>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[700px]">
+                <DialogTitle>{item.title}</DialogTitle>
+                <div className="mt-2 relative">
+                  <Image
+                    src={selectedItem?.images[currentImageIndex] || ''}
+                    alt={`${item.title} - Image ${currentImageIndex + 1}`}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto"
+                  />
+                  {selectedItem && selectedItem.images.length > 1 && (
+                    <>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="absolute left-2 top-1/2 transform -translate-y-1/2"
+                        onClick={handlePrevImage}
+                      >
+                        <ChevronLeft className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2"
+                        onClick={handleNextImage}
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                      </Button>
+                    </>
+                  )}
+                </div>
+              </DialogContent>
+            </Dialog>
+            <CardHeader>
+              <CardTitle>{item.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+  <p className="text-muted-foreground mb-4">{item.description}</p>
+  <p className="text-2xl font-bold mb-4">
+    {item.price === 0 ? 'FREE' : `€${item.price}`}
+  </p>
+</CardContent>
+            <CardFooter className="flex flex-row space-x-4">
+  <Button
+    onClick={() => {
+      const phoneNumber = "+49015259830847"; // Replace with your phone number
+      navigator.clipboard.writeText(phoneNumber);
+      alert(`Phone number ${phoneNumber} copied to clipboard!`);
+      window.location.href = `sms:${phoneNumber}`
+    }}
+    className="flex-1"
+  >
+    <MessageSquareText className="mr-2 h-4 w-4" /> Contact
+  </Button>
+
+  <Button
+    onClick={() => handlePayment(item)}
+    className="flex-1"
+  >
+    <DollarSign className="mr-2 h-4 w-4" /> Pay
+  </Button>
+</CardFooter>
+          </Card>
+        ))}
+      </div>
+    </>
+  )
 }
+
