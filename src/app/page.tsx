@@ -24,7 +24,7 @@ const saleItems: SaleItem[] = [
     description: "Comfortable bean bag in good condition, perfect for your living room. Original price €50.",
     price: 15,
     paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/static/images/bean.jpg","/static/images/bean2.jpg"]
+    images: ["/bean.jpg","/bean2.jpg"]
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const saleItems: SaleItem[] = [
     description: "White dining table with 4 chairs, ideal for small apartments.",
     price: 30,
     paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/static/images/yomat.jpg",]
+    images: ["/yomat.jpg",]
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const saleItems: SaleItem[] = [
     description: "Orange yoga mat, 94cm x 200cm, barely used. Original price 40€.",
     price: 10,
     paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/static/images/yomat.jpg",]
+    images: ["/yomat.jpg",]
   },
 
   {
@@ -49,7 +49,7 @@ const saleItems: SaleItem[] = [
     description: "Sturdy bookshelf with 5 shelves, great for organizing your books and decor.",
     price: 80,
     paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/static/images/wardrobe.jpg","/static/images/wardrobe2.jpg"]
+    images: ["/wardrobe.jpg","/wardrobe2.jpg"]
   },
 
   {
@@ -58,7 +58,7 @@ const saleItems: SaleItem[] = [
     description: "Charming yellow chair, gently used, adds a vibrant touch to any room! Price for two",
     price: 10,
     paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/static/images/chair.jpg",]
+    images: ["/chair.jpg",]
   },
 
   {
@@ -67,7 +67,7 @@ const saleItems: SaleItem[] = [
     description: "Ikea hanger, gently used, adds a vibrant touch to any room! Price for two",
     price: 0,
     paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/static/images/chair.jpg",]
+    images: ["/chair.jpg",]
   },
 ]
 
