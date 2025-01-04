@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { Mail, DollarSign, ChevronLeft, ChevronRight, MessageSquareText } from 'lucide-react'
+import { DollarSign, ChevronLeft, ChevronRight, MessageSquareText } from 'lucide-react'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { useState } from 'react'
@@ -75,8 +75,13 @@ export default function Home() {
   const [selectedItem, setSelectedItem] = useState<SaleItem | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  const handleContact = (item: SaleItem) => {
-    window.location.href = `mailto:your@email.com?subject=Interested in ${item.title}&body=Hi, I'm interested in the ${item.title} from your moveout sale.`
+  const handleContact = () => {
+    
+      const phoneNumber = "+49015259830847"; // Replace with your phone number
+      navigator.clipboard.writeText(phoneNumber);
+      alert(`Phone number ${phoneNumber} copied to clipboard!`);
+      window.location.href = `sms:${phoneNumber}`
+    
   }
 
   const handlePayment = (item: SaleItem) => {
@@ -168,12 +173,8 @@ export default function Home() {
 </CardContent>
             <CardFooter className="flex flex-row space-x-4">
   <Button
-    onClick={() => {
-      const phoneNumber = "+49015259830847"; // Replace with your phone number
-      navigator.clipboard.writeText(phoneNumber);
-      alert(`Phone number ${phoneNumber} copied to clipboard!`);
-      window.location.href = `sms:${phoneNumber}`
-    }}
+    onClick={() => handleContact()}
+      
     className="flex-1"
   >
     <MessageSquareText className="mr-2 h-4 w-4" /> Contact
