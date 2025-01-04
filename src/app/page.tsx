@@ -64,7 +64,7 @@ const saleItems: SaleItem[] = [
   {
     id: 6,
     title: "Hanger",
-    description: "Charming yellow chair, gently used, adds a vibrant touch to any room! Price for two",
+    description: "Ikea hanger, gently used, adds a vibrant touch to any room! Price for two",
     price: 0,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/static/images/chair.jpg",]
