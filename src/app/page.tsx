@@ -29,7 +29,7 @@ const saleItems: SaleItem[] = [
   {
     id: 2,
     title: "Dining Table",
-    description: "Wooden dining table with 4 chairs, ideal for small apartments.",
+    description: "White dining table with 4 chairs, ideal for small apartments.",
     price: 30,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/placeholder.svg",]
