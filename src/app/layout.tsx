@@ -20,7 +20,7 @@ export default function RootLayout({
         <div className="min-h-screen bg-background">
           <header className="bg-card shadow-md">
             <nav className="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
-              <h1 className="text-2xl font-bold mb-2 sm:mb-0">Moveout Sale</h1>
+              <h1 className="text-2xl font-bold mb-2 sm:mb-0">Moveout Sale / Giveaways</h1>
               <div className="space-x-4">
                 <Link href="/" className="text-primary hover:text-primary/80">Home</Link>
                 <Link href="/about" className="text-primary hover:text-primary/80">About</Link>
