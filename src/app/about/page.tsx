@@ -16,7 +16,7 @@ export default function About() {
         </p>
         <h3 className="text-xl font-semibold mb-2">Sale Details:</h3>
         <ul className="list-disc list-inside mb-4">
-          <li>Date: 04.01 - 31.01</li>
+          <li>Date: 07.01 - 31.01</li>
           <li>Location: Kim & Kang, Sattlerstrasse 2, 70174, Stuttgart</li>
         </ul>
         <p className="mb-4">
