@@ -31,7 +31,7 @@ const saleItems: SaleItem[] = [
     price: 10,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/yomat.jpg",],
-    sold: false
+    sold: true
   },
 
   {    title: "Wardrobe",
@@ -39,7 +39,7 @@ const saleItems: SaleItem[] = [
     price: 0,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/wardrobe.jpg","/images/wardrobe2.jpg"],
-    sold: false
+    sold: true
   },
 
   {    title: "Chair",
@@ -64,7 +64,7 @@ const saleItems: SaleItem[] = [
     price: 40,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/poang.jpg",],
-    sold: false
+    sold: true
   },
   {    title: "Hanger",
     description: "Ikea MULIG hanger, gently used. 152 x 99 x 46 cm",
@@ -111,7 +111,7 @@ const saleItems: SaleItem[] = [
     price: 0,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/tall_shelf.jpg","/images/tall_shelf2.jpg"],
-    sold: false
+    sold: true
   },
   {
     title: "Big Wardrobe",
@@ -119,7 +119,7 @@ const saleItems: SaleItem[] = [
     price: 30,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/big_wardrobe.jpg","/images/big_wardrobe2.jpg","/images/big_wardrobe3.jpg",],
-    sold: false
+    sold: true
   },
   {
     title: "Desk lamp",
@@ -152,7 +152,7 @@ const saleItems: SaleItem[] = [
     price: 0,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/vacuum.jpg","/images/vacuum2.jpg",],
-    sold: false
+    sold: true
   },
   {
     title: "Portfolio bag",
@@ -168,7 +168,7 @@ const saleItems: SaleItem[] = [
     price: 0,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/carpet.jpg",],
-    sold: false
+    sold: true
   },
   {
     title: "Wood Table",
@@ -176,7 +176,7 @@ const saleItems: SaleItem[] = [
     price: 10,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/wood_table.jpg",],
-    sold: false
+    sold: true
   },
 
 
@@ -228,8 +228,8 @@ export default function Home() {
         {saleItems.map((item) => (
         <Card key={item.title} className="relative overflow-hidden">
             {item.sold && (
-              <div className="absolute top-0 right-0 bg-red-500 text-white py-1 px-4 transform rotate-45 translate-x-[30%] translate-y-[30%] z-10">
-                Sold
+              <div className="absolute top-5 right-5 bg-orange-500 text-2xl text-white py-1 px-10 transform rotate-45 translate-x-[30%] translate-y-[30%] z-10">
+                Reserved
               </div>
             )}
             <Dialog>
