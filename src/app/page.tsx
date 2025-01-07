@@ -94,7 +94,7 @@ const saleItems: SaleItem[] = [
     price: 10,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/white_table.jpg","/images/white_table2.jpg","/images/white_table3.jpg","/images/white_table4.jpg"],
-    sold: false
+    sold: true
   },
 
   {
