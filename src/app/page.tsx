@@ -12,6 +12,7 @@ interface SaleItem {
   title: string;
   description: string;
   price: number;
+  salePrice?: number;
   paypalLink: string;
   images: string[];
   sold: boolean;
@@ -20,20 +21,10 @@ interface SaleItem {
 
 const saleItems: SaleItem[] = [
   
-
-  {    title: "Dining Table",
-    description: "White dining table for small kitchen. 80cm DIA. Original price 130€.",
-    price: 50,
-    paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/images/kitchen_table.jpg",],
-    sold: false,
-    reserved: false
-  },
-
-  
   {    title: "Big Trash Can",
     description: "Pedal trash can, good condition and cleaned inside and out. 63 x 48 x 30cm & 50L. Original price 30€.",
     price: 10,
+    salePrice: 5,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/big_trash.jpg",],
     sold: false,
@@ -42,6 +33,7 @@ const saleItems: SaleItem[] = [
   {    title: "Medium Trash Can",
     description: "Trash can, good condition and cleaned inside and out. 47 x 34 x 26cm & 50L. Original price 21€.",
     price: 5,
+    salePrice: 0,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/small_trash.jpg",],
     sold: false,
@@ -54,6 +46,7 @@ const saleItems: SaleItem[] = [
     title: "Microwave Oven",
     description: "Nice microwave + oven for various cooking needs, suitable for small house. Equipped with Air frying, steaming, roasting feature. Deep cleaned inside out. Original price €199 https://tinyurl.com/2ufx8znh",
     price: 100,
+    salePrice: 75,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/microwave.jpg",],
     sold: false,
@@ -64,6 +57,7 @@ const saleItems: SaleItem[] = [
     title: "Desk lamp",
     description: "IKEA KVART desk lamp",
     price: 10,
+    salePrice: 5,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/lamp.jpg","/images/lamp2.jpg"],
     sold: false,
@@ -71,53 +65,16 @@ const saleItems: SaleItem[] = [
   },
 
   {
-    title: "Drawer",
-    description: "Decent drawer 40 x 78cm, white, mint condition. Original Price €59,99 , https://tinyurl.com/49zr8pv2",
-    price: 25,
-    paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/images/drawer.jpg","/images/drawer2.jpg",],
-    sold: false,
-    reserved: false
-  },
-  {
-    title: "Shelf",
-    description: "IKEA KALLAX 39 x 41.5 x 111.5cm, white, Original Price €44,99 , https://tinyurl.com/5a43uj8s",
-    price: 15,
-    paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/images/shelf.jpg",],
-    sold: false,
-    reserved: false
-  },
-  
-  {
     title: "Portfolio bag",
     description: "Good for carrying big size documents. A2 Size, water resistant - plastic material, cost for two",
     price: 10,
+    salePrice: 0,
     paypalLink: "https://www.paypal.me/gyurikim968",
     images: ["/images/portfolio_bag.jpg","/images/portfolio_bag2.jpg",],
     sold: false,
     reserved: false
   },
 
-  {    title: "Hanger",
-    description: "Ikea MULIG hanger, gently used. 152 x 99 x 46 cm",
-    price: 0,
-    paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/images/hanger.jpg",],
-    sold: false,
-    reserved: true
-    
-  },
-
-  {    title: "Yoga Matt",
-    description: "Orange yoga mat, 94cm x 200cm, barely used. Original price 40€.",
-    price: 10,
-    paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/images/yomat.jpg",],
-    sold: false,
-    reserved: true
-    
-  },
   {    title: "Chair",
     description: "Charming yellow chair, gently used, adds a vibrant touch to any room! Price for two",
     price: 10,
@@ -127,6 +84,55 @@ const saleItems: SaleItem[] = [
     reserved: true
     
   },
+  {
+    title: "Drawer",
+    description: "Decent drawer 40 x 78cm, white, mint condition. Original Price €59,99 , https://tinyurl.com/49zr8pv2",
+    price: 25,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/images/drawer.jpg","/images/drawer2.jpg",],
+    sold: true,
+    reserved: true
+  },
+  {
+    title: "Shelf",
+    description: "IKEA KALLAX 39 x 41.5 x 111.5cm, white, Original Price €44,99 , https://tinyurl.com/5a43uj8s",
+    price: 15,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/images/shelf.jpg",],
+    sold: true,
+    reserved: true
+  },
+  {    title: "Dining Table",
+    description: "White dining table for small kitchen. 80cm DIA. Original price 130€.",
+    price: 50,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/images/kitchen_table.jpg",],
+    sold: true,
+    reserved: true
+  },
+  
+
+
+  {    title: "Hanger",
+    description: "Ikea MULIG hanger, gently used. 152 x 99 x 46 cm",
+    price: 0,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/images/hanger.jpg",],
+    sold: true,
+    reserved: true
+    
+  },
+
+  {    title: "Yoga Matt",
+    description: "Orange yoga mat, 94cm x 200cm, barely used. Original price 40€.",
+    price: 10,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/images/yomat.jpg",],
+    sold: true,
+    reserved: true
+    
+  },
+
 
   
 
@@ -341,15 +347,27 @@ export default function Home() {
               <CardTitle>{item.title}</CardTitle>
             </CardHeader>
             <CardContent>
-              {/* Use dangerouslySetInnerHTML to render clickable links */}
-              <p
-                className="text-muted-foreground mb-4"
-                dangerouslySetInnerHTML={{ __html: makeLinksClickable(item.description) }}
-              />
-              <p className="text-2xl font-bold mb-4">
-                {item.price === 0 ? 'FREE' : `€${item.price}`}
-              </p>
-            </CardContent>
+  <p
+    className="text-muted-foreground mb-4"
+    dangerouslySetInnerHTML={{ __html: makeLinksClickable(item.description) }}
+  />
+  <p className="text-2xl font-bold mb-4">
+    {item.salePrice !== undefined ? (
+      item.salePrice === 0 ? (
+        <span className="text-green-600">FREE</span>
+      ) : (
+        <>
+          <span className="line-through text-gray-300">€{item.price}</span>{' '}
+          <span>€{item.salePrice}</span>
+        </>
+      )
+    ) : item.price === 0 ? (
+      'FREE'
+    ) : (
+      `€${item.price}`
+    )}
+  </p>
+</CardContent>
             <CardFooter className="flex flex-row space-x-4">
               <Button onClick={() => handleContact()} className="flex-1">
                 <MessageSquareText className="mr-2 h-4 w-4" /> Contact
