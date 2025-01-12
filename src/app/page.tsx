@@ -30,15 +30,7 @@ const saleItems: SaleItem[] = [
     sold: false,
     reserved: false
   },
-  {    title: "Medium Trash Can",
-    description: "Trash can, good condition and cleaned inside and out. 47 x 34 x 26cm & 50L. Original price 21€.",
-    price: 5,
-    salePrice: 0,
-    paypalLink: "https://www.paypal.me/gyurikim968",
-    images: ["/images/small_trash.jpg",],
-    sold: false,
-    reserved: false
-  },
+
 
   
 
@@ -73,6 +65,15 @@ const saleItems: SaleItem[] = [
     images: ["/images/portfolio_bag.jpg","/images/portfolio_bag2.jpg",],
     sold: false,
     reserved: false
+  },
+  {    title: "Medium Trash Can",
+    description: "Trash can, good condition and cleaned inside and out. 47 x 34 x 26cm & 50L. Original price 21€.",
+    price: 5,
+    salePrice: 0,
+    paypalLink: "https://www.paypal.me/gyurikim968",
+    images: ["/images/small_trash.jpg",],
+    sold: false,
+    reserved: true
   },
 
   {    title: "Chair",
